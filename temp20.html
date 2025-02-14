@@ -14,22 +14,45 @@
       const addToCart = (id) => {
         if (!cart[id]) {
           cart[id] = 1;
-          showCart();
         }
+
+        showCart();
       };
       const increment = (id) => {
         cart[id] += 1;
         showCart();
+        // items.innerHTML = 100;
+      };
+      const showtotal = () => {
+        let total = products.reduce((sum, value) => {
+          return sum + value.price * (cart[value.id] ?? 0);
+        }, 0);
+
+        tot.innerHTML = ` $${total}`;
+      };
+      const display = () => {
+        cartBox.style.display = "block";
+        prodbox.style.display = "none";
+        // items.innerHTML = 50;
       };
       const decrement = (id) => {
         cart[id] -= 1;
         showCart();
+        // items.innerHTML = 50;
       };
       const del = (id) => {
-        cart[id] = 0;
+        // cart[id] = 0;
+        delete cart[id];
         showCart();
       };
+      const hide = () => {
+        cartBox.style.display = "none";
+        prodbox.style.display = "block";
+      };
       const showCart = () => {
+        items.innerHTML = Object.keys(cart).length;
+        showtotal();
+        // display();
         let str = "";
         products.map((value) => {
           if (cart[value.id]) {
@@ -49,7 +72,7 @@
       const showProducts = () => {
         let str = "";
         products.map((value) => {
-          str += `<div>${value.id}-${value.name}-${value.price}-<button onclick='addToCart(${value.id})'>Add to Cart</button></div>`;
+          str += `<div>${value.id}-${value.name}-${value.price}-<button onclick='addToCart(${value.id})'>Add</button></div>`;
         });
         divProducts.innerHTML = str;
       };
@@ -57,10 +80,17 @@
   </head>
   <body onload="showProducts()">
     <h1>My Store</h1>
+    <h3 onclick="display()">cart:<span id="items"></span></h3>
     <hr />
-    <h3>Products</h3>
-    <div id="divProducts"></div>
-    <h3>My Cart</h3>
-    <div id="divCart"></div>
+    <div id="prodbox">
+      <h3>Products</h3>
+      <div id="divProducts"></div>
+    </div>
+    <div id="cartBox" style="display: none">
+      <h3>My Cart</h3>
+      <div id="divCart"></div>
+      <h4>Order value:<span id="tot"></span></h4>
+      <button onclick="hide()">Close</button>
+    </div>
   </body>
 </html>
