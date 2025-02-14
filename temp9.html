@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function Logindata() {
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("pass").value;
+        data.innerHTML = `${email},${pass}`;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>login</h1>
+    <p><input type="text" id="email" placeholder="Enter Mail" /></p>
+    <p><input type="password" id="pass" placeholder="Enter password" /></p>
+    <button onclick="Logindata()">LogIn</button>
+    <hr />
+  </body>
+</html>

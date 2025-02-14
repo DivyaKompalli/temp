@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let user = [];
+      function showdata() {
+        // alert("hello");
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let pass = document.getElementById("password").value;
+        let dat = document.getElementById("date").value;
+        let users = {
+          name: name,
+          email: email,
+          password: pass,
+          dob: dat,
+        };
+        user.push(users);
+        // data.innerHTML = `${name},${email},${pass},${dat}`;
+        console.log(user);
+        let length = user.length;
+        let str = "";
+        for (let i = 0; i < length; i++) {
+          str = str + `<li>${user[i].name}-${user[i].email}</li>`;
+        }
+        data.innerHTML = str;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>New Registeration</h1>
+    <p><input type="text" id="name" placeholder="Enter name" /></p>
+    <p><input type="text" id="email" placeholder="Enter email" /></p>
+    <p><input type="password" id="password" placeholder="Enter name" /></p>
+    <p>
+      <input type="datetime-local" id="date" />
+    </p>
+    <button onclick="showdata()">Register</button>
+    <hr />
+    <div id="data"></div>
+  </body>
+</html>
