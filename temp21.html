@@ -11,9 +11,16 @@
         margin: 0;
         padding: 0;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
+        justify-content: center;
         height: 100vh;
+      }
+      .logo {
+        font-size: 40px;
+        color: #1877f2;
+        font-weight: bold;
+        margin-bottom: 20px;
       }
       .container {
         width: 432px;
@@ -22,12 +29,6 @@
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         text-align: center;
-      }
-      .logo {
-        font-size: 36px;
-        color: #1877f2;
-        font-weight: bold;
-        margin-bottom: 10px;
       }
       .container h2 {
         font-size: 24px;
@@ -50,20 +51,7 @@
         border-radius: 5px;
         font-size: 16px;
       }
-      .dob-container {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 10px;
-        width: 90%;
-        gap: 10px;
-        margin: 5px 0;
-        padding: 12px;
-      }
-      .dob-container select {
-        width: 32%;
-        padding: 10px;
-        font-size: 14px;
-      }
+      .dob-container,
       .gender-container {
         display: flex;
         justify-content: space-between;
@@ -73,14 +61,13 @@
         margin: 5px 0;
         padding: 12px;
       }
+      .dob-container select,
       .gender-container label {
-        display: flex;
-        align-items: center;
-        border: 1px solid #ccd0d5;
-        padding: 10px;
         width: 32%;
-        border-radius: 5px;
+        padding: 10px;
         font-size: 14px;
+        border: 1px solid #ccd0d5;
+        border-radius: 5px;
       }
       .gender-container input {
         margin-right: 5px;
@@ -104,11 +91,20 @@
         margin-top: 10px;
         font-size: 14px;
       }
+      .footer a {
+        color: #1877f2;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .footer a:hover {
+        text-decoration: underline;
+      }
     </style>
   </head>
   <body>
+    <div class="logo">facebook</div>
+
     <div class="container">
-      <div class="logo">facebook</div>
       <h2>Create a new account</h2>
       <p>It's quick and easy.</p>
       <form id="signupForm">
@@ -135,7 +131,6 @@
           <select id="dob-month"></select>
           <select id="dob-year"></select>
         </div>
-        <br />
         <label>Gender</label>
         <div class="gender-container">
           <label
@@ -162,7 +157,7 @@
         />
         <button type="submit" class="signup-btn">Sign Up</button>
       </form>
-      <p class="footer">Already have an account?</p>
+      <p class="footer">Already have an account? <a href="#">Log in</a></p>
     </div>
 
     <script>
