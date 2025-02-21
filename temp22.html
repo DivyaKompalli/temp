@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <div id="root"></div> -->
+    <img
+      src="assests/Basketball.png"
+      width="100"
+      height="100"
+      alt="Basketball"
+      id="ball"
+    />
+    <script>
+      ball.style.position = "absolute";
+      let left = 0;
+      let b = document.body;
+      b.onkeydown = (e) => {
+        // (root.innerHTML = e.key)
+        left += 10;
+        ball.style.left = left + "px";
+      };
+    </script>
+  </body>
+</html>
