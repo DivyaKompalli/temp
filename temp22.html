@@ -16,11 +16,25 @@
     />
     <script>
       ball.style.position = "absolute";
-      let left = 0;
       let b = document.body;
+      let left = 0;
+      let d = 0;
+
       b.onkeydown = (e) => {
-        // (root.innerHTML = e.key)
-        left += 10;
+        // console.log(e.key);
+        if (e.key == "ArrowRight") {
+          left += 5;
+        }
+        if (e.key == "ArrowDown") {
+          d += 5;
+        }
+        if (e.key == "ArrowUp") {
+          d -= 5;
+        }
+        if (e.key == "ArrowLeft") {
+          left -= 5;
+        }
+        ball.style.top = d + "px";
         ball.style.left = left + "px";
       };
     </script>
