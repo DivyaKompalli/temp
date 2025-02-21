@@ -80,9 +80,15 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
-        margin: 5px;
+        margin: 2px;
         border-radius: 5px;
         padding: 3px;
+      }
+      .check label {
+        margin-right: auto;
+      }
+      .check input {
+        margin-left: 60px;
       }
     </style>
   </head>
@@ -133,7 +139,7 @@
         email = document.getElementById("email").value;
         password = document.getElementById("password").value;
         gender = document.getElementsByName("gender");
-        interest = document.getElementById("interest");
+        interest = document.getElementsByName("interest");
         pronoun = document.getElementById("prSelect").value;
         dd = Number(document.getElementById("day").value);
         mm = Number(document.getElementById("month").value);
@@ -251,15 +257,15 @@
       <div class="row">
       <div class="check">
         <div><label> Sports</label></div>
-        <input type="checkbox" name="interest" />
+        <input type="checkbox" name="interest" id="sp"/>
       </div>
         <div class="check">
           <div><label> Movies</label></div>
-        <input type="checkbox" name="interest" />
+        <input type="checkbox" name="interest" id="mov" />
       </div>
       <div class="check">
         <div><label> Music</label></div>
-        <input type="checkbox" name="interest" />
+        <input type="checkbox" name="interest" id="mus"/>
       </div>
     </div>
       <div class="row">
