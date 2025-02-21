@@ -80,16 +80,16 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
-        margin: 2px;
+        margin: 5px;
         border-radius: 5px;
         padding: 3px;
       }
-      .check label {
+      /* .check label {
         margin-right: auto;
       }
       .check input {
         margin-left: 60px;
-      }
+      } */
     </style>
   </head>
   <body>
@@ -257,15 +257,22 @@
       <div class="row">
       <div class="check">
         <div><label> Sports</label></div>
-        <input type="checkbox" name="interest" id="sp"/>
+        <div><input type="checkbox" name="interest" id="sp"${
+          i.includes("Sports") && "checked"
+        }/></div>
       </div>
         <div class="check">
           <div><label> Movies</label></div>
-        <input type="checkbox" name="interest" id="mov" />
+          <div>
+        <input type="checkbox" name="interest" id="mov" ${
+          i.includes("Movies") && "checked"
+        } /></div>
       </div>
       <div class="check">
         <div><label> Music</label></div>
-        <input type="checkbox" name="interest" id="mus"/>
+        <div>
+        <input type="checkbox" name="interest" id="mus"
+        ${i.includes("Music") && "checked"}/></div>
       </div>
     </div>
       <div class="row">
