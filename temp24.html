@@ -10,6 +10,17 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <style>
+      .card:hover {
+        /* transform: scale(1.1); */
+        transform: translateY(-10px);
+        /* transform: rotate3d(1, 1, 1, 30deg); */
+        /* transform: perspective(1000px) rotateX(10deg); */
+      }
+      .card {
+        transition: transform 0.2s;
+      }
+    </style>
   </head>
   <body>
     <div class="container-fluid">
@@ -108,6 +119,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="row bg-dark text-white text-center mt-3">
+        <div><p>&copy; Copy Right Reserved</p></div>
       </div>
     </div>
     <script
