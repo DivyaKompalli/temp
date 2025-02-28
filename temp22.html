@@ -8,14 +8,14 @@
   <body>
     <!-- <div id="root"></div> -->
     <img
-      src="assests/Basketball.png"
+      src="assests/kitty.jpg"
       width="100"
       height="100"
-      alt="Basketball"
-      id="ball"
+      alt="Basketcat"
+      id="cat"
     />
     <script>
-      ball.style.position = "absolute";
+      cat.style.position = "relative";
       let b = document.body;
       let left = 0;
       let d = 0;
@@ -34,8 +34,8 @@
         if (e.key == "ArrowLeft") {
           left -= 5;
         }
-        ball.style.top = d + "px";
-        ball.style.left = left + "px";
+        cat.style.top = d + "px";
+        cat.style.left = left + "px";
       };
     </script>
   </body>
